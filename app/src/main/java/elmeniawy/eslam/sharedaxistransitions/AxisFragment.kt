@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.transition.MaterialSharedAxis
 import elmeniawy.eslam.sharedaxistransitions.databinding.FragmentAxisBinding
 
 class AxisFragment : Fragment() {
@@ -29,15 +30,29 @@ class AxisFragment : Fragment() {
 
         // Click listeners.
         _binding?.btXAxis?.setOnClickListener {
-            findNavController().navigate(AxisFragmentDirections.actionAxisFragmentToAxisDestinationFragment())
+            setupTransitions(MaterialSharedAxis.X)
+            navigate(MaterialSharedAxis.X, _binding?.btXAxis?.text?.toString())
         }
 
         _binding?.btYAxis?.setOnClickListener {
-            findNavController().navigate(AxisFragmentDirections.actionAxisFragmentToAxisDestinationFragment())
+            setupTransitions(MaterialSharedAxis.Y)
+            navigate(MaterialSharedAxis.Y, _binding?.btYAxis?.text?.toString())
         }
 
         _binding?.btZAxis?.setOnClickListener {
-            findNavController().navigate(AxisFragmentDirections.actionAxisFragmentToAxisDestinationFragment())
+            setupTransitions(MaterialSharedAxis.Z)
+            navigate(MaterialSharedAxis.Z, _binding?.btZAxis?.text?.toString())
         }
+    }
+
+    private fun setupTransitions(axis: Int) {
+        exitTransition = MaterialSharedAxis(axis, true)
+        reenterTransition = MaterialSharedAxis(axis, false)
+    }
+
+    private fun navigate(axis: Int, title: String?) {
+        findNavController().navigate(
+            AxisFragmentDirections.actionAxisFragmentToAxisDestinationFragment(axis, title)
+        )
     }
 }

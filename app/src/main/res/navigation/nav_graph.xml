@@ -19,5 +19,14 @@
         android:id="@+id/axisDestinationFragment"
         android:name="elmeniawy.eslam.sharedaxistransitions.AxisDestinationFragment"
         android:label="fragment_axis_destination"
-        tools:layout="@layout/fragment_axis_destination" />
+        tools:layout="@layout/fragment_axis_destination">
+        <argument
+            android:name="axis"
+            app:argType="integer" />
+        <argument
+            android:name="title"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
 </navigation>

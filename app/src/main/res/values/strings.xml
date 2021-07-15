@@ -4,4 +4,5 @@
     <string name="x_axis">x Axis</string>
     <string name="y_axis">Y Axis</string>
     <string name="z_axis">Z Axis</string>
+    <string name="transition_is_done_using">Transition is done using</string>
 </resources>
