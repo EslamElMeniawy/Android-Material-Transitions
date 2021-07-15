@@ -19,4 +19,11 @@ class AxisDestinationFragment : Fragment() {
         _binding = FragmentAxisDestinationBinding.inflate(inflater, container, false)
         return _binding?.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Setup layout.
+        _binding?.root?.setInsetsPadding(topBottomView = _binding?.layoutRoot)
+    }
 }

@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Shared Axis Transitions</string>
+    <string name="select_axis">Select Axis</string>
+    <string name="x_axis">x Axis</string>
+    <string name="y_axis">Y Axis</string>
+    <string name="z_axis">Z Axis</string>
 </resources>

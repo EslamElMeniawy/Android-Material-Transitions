@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/axisFragment">
+
+    <fragment
+        android:id="@+id/axisFragment"
+        android:name="elmeniawy.eslam.sharedaxistransitions.AxisFragment"
+        android:label="fragment_axis"
+        tools:layout="@layout/fragment_axis">
+        <action
+            android:id="@+id/action_axisFragment_to_axisDestinationFragment"
+            app:destination="@id/axisDestinationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/axisDestinationFragment"
+        android:name="elmeniawy.eslam.sharedaxistransitions.AxisDestinationFragment"
+        android:label="fragment_axis_destination"
+        tools:layout="@layout/fragment_axis_destination" />
+</navigation>
