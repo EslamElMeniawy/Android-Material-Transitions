@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.transition.MaterialFade
 import com.google.android.material.transition.MaterialFadeThrough
 import com.google.android.material.transition.MaterialSharedAxis
 import elmeniawy.eslam.materialtransitions.databinding.FragmentSelectTransitionBinding
@@ -109,6 +110,8 @@ class SelectTransitionFragment : Fragment() {
             }
 
             TransitionTypes.FADE -> {
+                exitTransition = MaterialFade()
+                reenterTransition = MaterialFade()
             }
 
             TransitionTypes.SHARED_AXIS -> {

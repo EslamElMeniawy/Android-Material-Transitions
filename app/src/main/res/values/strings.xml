@@ -2,7 +2,7 @@
     <string name="app_name">Material Transitions</string>
     <string name="select_transition">Select Transition</string>
     <string name="fade_through">Fade Through</string>
-    <string name="fade">Fade Through</string>
+    <string name="fade">Fade</string>
     <string name="shared_x_axis">Shared X Axis</string>
     <string name="shared_y_axis">Shared Y Axis</string>
     <string name="shared_z_axis">Shared Z Axis</string>
