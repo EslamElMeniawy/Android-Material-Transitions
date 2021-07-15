@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.transition.MaterialFadeThrough
 import com.google.android.material.transition.MaterialSharedAxis
 import elmeniawy.eslam.materialtransitions.databinding.FragmentTransitionDestinationBinding
 import elmeniawy.eslam.materialtransitions.enums.TransitionTypes
@@ -21,6 +22,8 @@ class TransitionDestinationFragment : Fragment() {
         // Setup transition.
         when (_args.transitionType) {
             TransitionTypes.FADE_THROUGH -> {
+                enterTransition = MaterialFadeThrough()
+                returnTransition = MaterialFadeThrough()
             }
 
             TransitionTypes.FADE -> {

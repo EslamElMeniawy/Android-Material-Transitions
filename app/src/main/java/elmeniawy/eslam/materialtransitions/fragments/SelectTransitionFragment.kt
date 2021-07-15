@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.google.android.material.transition.MaterialFadeThrough
 import com.google.android.material.transition.MaterialSharedAxis
 import elmeniawy.eslam.materialtransitions.databinding.FragmentSelectTransitionBinding
 import elmeniawy.eslam.materialtransitions.enums.TransitionTypes
@@ -31,6 +32,29 @@ class SelectTransitionFragment : Fragment() {
         _binding?.root?.setInsetsPadding(topBottomView = _binding?.layoutRoot)
 
         // Click listeners.
+        fadeThroughClick()
+        fadeClick()
+        sharedXAxisClick()
+        sharedYAxisClick()
+        sharedZAxisClick()
+        containerTransformationClick()
+    }
+
+    private fun fadeThroughClick() {
+        _binding?.btFadeThrough?.setOnClickListener {
+            setupTransitions(TransitionTypes.FADE_THROUGH)
+            navigate(TransitionTypes.FADE_THROUGH, _binding?.btFadeThrough?.text?.toString())
+        }
+    }
+
+    private fun fadeClick() {
+        _binding?.btFade?.setOnClickListener {
+            setupTransitions(TransitionTypes.FADE)
+            navigate(TransitionTypes.FADE, _binding?.btFade?.text?.toString())
+        }
+    }
+
+    private fun sharedXAxisClick() {
         _binding?.btSharedXAxis?.setOnClickListener {
             setupTransitions(TransitionTypes.SHARED_AXIS, MaterialSharedAxis.X)
 
@@ -40,7 +64,9 @@ class SelectTransitionFragment : Fragment() {
                 MaterialSharedAxis.X
             )
         }
+    }
 
+    private fun sharedYAxisClick() {
         _binding?.btSharedYAxis?.setOnClickListener {
             setupTransitions(TransitionTypes.SHARED_AXIS, MaterialSharedAxis.Y)
 
@@ -50,7 +76,9 @@ class SelectTransitionFragment : Fragment() {
                 MaterialSharedAxis.Y
             )
         }
+    }
 
+    private fun sharedZAxisClick() {
         _binding?.btSharedZAxis?.setOnClickListener {
             setupTransitions(TransitionTypes.SHARED_AXIS, MaterialSharedAxis.Z)
 
@@ -62,9 +90,22 @@ class SelectTransitionFragment : Fragment() {
         }
     }
 
+    private fun containerTransformationClick() {
+        _binding?.btContainerTransformation?.setOnClickListener {
+            setupTransitions(TransitionTypes.CONTAINER_TRANSFORMATION)
+
+            navigate(
+                TransitionTypes.CONTAINER_TRANSFORMATION,
+                _binding?.btContainerTransformation?.text?.toString()
+            )
+        }
+    }
+
     private fun setupTransitions(type: TransitionTypes, axis: Int? = null) {
         when (type) {
             TransitionTypes.FADE_THROUGH -> {
+                exitTransition = MaterialFadeThrough()
+                reenterTransition = MaterialFadeThrough()
             }
 
             TransitionTypes.FADE -> {
