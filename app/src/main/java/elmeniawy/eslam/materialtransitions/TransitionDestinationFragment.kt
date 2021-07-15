@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.MaterialSharedAxis
-import elmeniawy.eslam.materialtransitions.databinding.FragmentAxisDestinationBinding
+import elmeniawy.eslam.materialtransitions.databinding.FragmentTransitionDestinationBinding
 
-class AxisDestinationFragment : Fragment() {
-    private var _binding: FragmentAxisDestinationBinding? = null
-    private val _args: AxisDestinationFragmentArgs by navArgs()
+class TransitionDestinationFragment : Fragment() {
+    private var _binding: FragmentTransitionDestinationBinding? = null
+    private val _args: TransitionDestinationFragmentArgs by navArgs()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +27,7 @@ class AxisDestinationFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment.
-        _binding = FragmentAxisDestinationBinding.inflate(inflater, container, false)
+        _binding = FragmentTransitionDestinationBinding.inflate(inflater, container, false)
         return _binding?.root
     }
 

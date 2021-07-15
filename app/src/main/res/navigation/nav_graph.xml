@@ -3,26 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/axisFragment">
+    app:startDestination="@id/selectTransitionFragment">
 
     <fragment
-        android:id="@+id/axisFragment"
-        android:name="elmeniawy.eslam.materialtransitions.AxisFragment"
+        android:id="@+id/selectTransitionFragment"
+        android:name="elmeniawy.eslam.materialtransitions.SelectTransitionFragment"
         android:label="fragment_axis"
-        tools:layout="@layout/fragment_axis">
+        tools:layout="@layout/fragment_select_transition">
         <action
-            android:id="@+id/action_axisFragment_to_axisDestinationFragment"
-            app:destination="@id/axisDestinationFragment" />
+            android:id="@+id/action_selectTransitionFragment_to_transitionDestinationFragment"
+            app:destination="@id/transitionDestinationFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/axisDestinationFragment"
-        android:name="elmeniawy.eslam.materialtransitions.AxisDestinationFragment"
+        android:id="@+id/transitionDestinationFragment"
+        android:name="elmeniawy.eslam.materialtransitions.TransitionDestinationFragment"
         android:label="fragment_axis_destination"
-        tools:layout="@layout/fragment_axis_destination">
+        tools:layout="@layout/fragment_transition_destination">
+
         <argument
             android:name="axis"
             app:argType="integer" />
+
         <argument
             android:name="title"
             android:defaultValue="@null"

@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.transition.MaterialSharedAxis
-import elmeniawy.eslam.materialtransitions.databinding.FragmentAxisBinding
+import elmeniawy.eslam.materialtransitions.databinding.FragmentSelectTransitionBinding
 
-class AxisFragment : Fragment() {
-    private var _binding: FragmentAxisBinding? = null
+class SelectTransitionFragment : Fragment() {
+    private var _binding: FragmentSelectTransitionBinding? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -18,7 +18,7 @@ class AxisFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment.
-        _binding = FragmentAxisBinding.inflate(inflater, container, false)
+        _binding = FragmentSelectTransitionBinding.inflate(inflater, container, false)
         return _binding?.root
     }
 
@@ -50,9 +50,8 @@ class AxisFragment : Fragment() {
         reenterTransition = MaterialSharedAxis(axis, false)
     }
 
-    private fun navigate(axis: Int, title: String?) {
-        findNavController().navigate(
-            AxisFragmentDirections.actionAxisFragmentToAxisDestinationFragment(axis, title)
-        )
-    }
+    private fun navigate(axis: Int, title: String?) = findNavController().navigate(
+        SelectTransitionFragmentDirections
+            .actionSelectTransitionFragmentToTransitionDestinationFragment(axis, title)
+    )
 }
