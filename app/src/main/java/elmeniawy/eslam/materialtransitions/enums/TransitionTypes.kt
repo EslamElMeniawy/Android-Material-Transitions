@@ -4,7 +4,6 @@ package elmeniawy.eslam.materialtransitions.enums
  * TransitionTypes
  *
  * Created by Eslam El-Meniawy on 15-Jul-2021 11:23 AM.
- * Roqay
  */
 enum class TransitionTypes {
     FADE_THROUGH,

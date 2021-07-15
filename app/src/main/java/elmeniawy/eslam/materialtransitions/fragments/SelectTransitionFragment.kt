@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.FragmentNavigator
+import androidx.navigation.fragment.FragmentNavigatorExtras
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.transition.MaterialFade
 import com.google.android.material.transition.MaterialFadeThrough
 import com.google.android.material.transition.MaterialSharedAxis
+import elmeniawy.eslam.materialtransitions.R
 import elmeniawy.eslam.materialtransitions.databinding.FragmentSelectTransitionBinding
 import elmeniawy.eslam.materialtransitions.enums.TransitionTypes
 import elmeniawy.eslam.materialtransitions.extensions.setInsetsPadding
@@ -62,7 +65,7 @@ class SelectTransitionFragment : Fragment() {
             navigate(
                 TransitionTypes.SHARED_AXIS,
                 _binding?.btSharedXAxis?.text?.toString(),
-                MaterialSharedAxis.X
+                axis = MaterialSharedAxis.X
             )
         }
     }
@@ -74,7 +77,7 @@ class SelectTransitionFragment : Fragment() {
             navigate(
                 TransitionTypes.SHARED_AXIS,
                 _binding?.btSharedYAxis?.text?.toString(),
-                MaterialSharedAxis.Y
+                axis = MaterialSharedAxis.Y
             )
         }
     }
@@ -86,18 +89,21 @@ class SelectTransitionFragment : Fragment() {
             navigate(
                 TransitionTypes.SHARED_AXIS,
                 _binding?.btSharedZAxis?.text?.toString(),
-                MaterialSharedAxis.Z
+                axis = MaterialSharedAxis.Z
             )
         }
     }
 
     private fun containerTransformationClick() {
         _binding?.btContainerTransformation?.setOnClickListener {
-            setupTransitions(TransitionTypes.CONTAINER_TRANSFORMATION)
+            val extras = FragmentNavigatorExtras(
+                it to getString(R.string.destination_transition_name)
+            )
 
             navigate(
                 TransitionTypes.CONTAINER_TRANSFORMATION,
-                _binding?.btContainerTransformation?.text?.toString()
+                _binding?.btContainerTransformation?.text?.toString(),
+                extras = extras
             )
         }
     }
@@ -121,21 +127,23 @@ class SelectTransitionFragment : Fragment() {
                 }
             }
 
-            TransitionTypes.CONTAINER_TRANSFORMATION -> {
-            }
-
-            TransitionTypes.NO_TRANSITION -> {
+            else -> {
             }
         }
     }
 
-    private fun navigate(type: TransitionTypes, title: String?, axis: Int? = null) =
+    private fun navigate(
+        type: TransitionTypes,
+        title: String?,
+        axis: Int? = null,
+        extras: FragmentNavigator.Extras? = null
+    ) =
         findNavController().navigate(
             SelectTransitionFragmentDirections
                 .actionSelectTransitionFragmentToTransitionDestinationFragment(
                     transitionType = type,
                     title = title,
                     axis = axis ?: -1
-                )
+                ), extras ?: FragmentNavigatorExtras()
         )
 }

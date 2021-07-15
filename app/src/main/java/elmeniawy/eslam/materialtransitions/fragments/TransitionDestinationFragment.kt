@@ -1,14 +1,17 @@
 package elmeniawy.eslam.materialtransitions.fragments
 
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.google.android.material.transition.MaterialContainerTransform
 import com.google.android.material.transition.MaterialFade
 import com.google.android.material.transition.MaterialFadeThrough
 import com.google.android.material.transition.MaterialSharedAxis
+import elmeniawy.eslam.materialtransitions.R
 import elmeniawy.eslam.materialtransitions.databinding.FragmentTransitionDestinationBinding
 import elmeniawy.eslam.materialtransitions.enums.TransitionTypes
 import elmeniawy.eslam.materialtransitions.extensions.setInsetsPadding
@@ -40,6 +43,10 @@ class TransitionDestinationFragment : Fragment() {
             }
 
             TransitionTypes.CONTAINER_TRANSFORMATION -> {
+                sharedElementEnterTransition = MaterialContainerTransform().apply {
+                    drawingViewId = R.id.nav_host_fragment
+                    scrimColor = Color.TRANSPARENT
+                }
             }
 
             TransitionTypes.NO_TRANSITION -> {
