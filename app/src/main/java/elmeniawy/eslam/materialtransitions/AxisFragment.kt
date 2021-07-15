@@ -29,19 +29,19 @@ class AxisFragment : Fragment() {
         _binding?.root?.setInsetsPadding(topBottomView = _binding?.layoutRoot)
 
         // Click listeners.
-        _binding?.btXAxis?.setOnClickListener {
+        _binding?.btSharedXAxis?.setOnClickListener {
             setupTransitions(MaterialSharedAxis.X)
-            navigate(MaterialSharedAxis.X, _binding?.btXAxis?.text?.toString())
+            navigate(MaterialSharedAxis.X, _binding?.btSharedXAxis?.text?.toString())
         }
 
-        _binding?.btYAxis?.setOnClickListener {
+        _binding?.btSharedYAxis?.setOnClickListener {
             setupTransitions(MaterialSharedAxis.Y)
-            navigate(MaterialSharedAxis.Y, _binding?.btYAxis?.text?.toString())
+            navigate(MaterialSharedAxis.Y, _binding?.btSharedYAxis?.text?.toString())
         }
 
-        _binding?.btZAxis?.setOnClickListener {
+        _binding?.btSharedZAxis?.setOnClickListener {
             setupTransitions(MaterialSharedAxis.Z)
-            navigate(MaterialSharedAxis.Z, _binding?.btZAxis?.text?.toString())
+            navigate(MaterialSharedAxis.Z, _binding?.btSharedZAxis?.text?.toString())
         }
     }
 

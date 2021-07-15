@@ -1,8 +1,11 @@
 <resources>
-    <string name="app_name">Shared Axis Transitions</string>
-    <string name="select_axis">Select Axis</string>
-    <string name="x_axis">x Axis</string>
-    <string name="y_axis">Y Axis</string>
-    <string name="z_axis">Z Axis</string>
+    <string name="app_name">Material Transitions</string>
+    <string name="select_transition">Select Transition</string>
+    <string name="fade_through">Fade Through</string>
+    <string name="fade">Fade Through</string>
+    <string name="shared_x_axis">Shared X Axis</string>
+    <string name="shared_y_axis">Shared Y Axis</string>
+    <string name="shared_z_axis">Shared Z Axis</string>
+    <string name="container_transformation">Container Transformation</string>
     <string name="transition_is_done_using">Transition is done using</string>
 </resources>
