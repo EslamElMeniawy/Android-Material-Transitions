@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/selectTransitionFragment"
-        android:name="elmeniawy.eslam.materialtransitions.SelectTransitionFragment"
+        android:name="elmeniawy.eslam.materialtransitions.fragments.SelectTransitionFragment"
         android:label="fragment_axis"
         tools:layout="@layout/fragment_select_transition">
         <action
@@ -17,18 +17,23 @@
 
     <fragment
         android:id="@+id/transitionDestinationFragment"
-        android:name="elmeniawy.eslam.materialtransitions.TransitionDestinationFragment"
+        android:name="elmeniawy.eslam.materialtransitions.fragments.TransitionDestinationFragment"
         android:label="fragment_axis_destination"
         tools:layout="@layout/fragment_transition_destination">
 
         <argument
-            android:name="axis"
-            app:argType="integer" />
+            android:name="transitionType"
+            android:defaultValue="NO_TRANSITION"
+            app:argType="elmeniawy.eslam.materialtransitions.enums.TransitionTypes" />
 
         <argument
             android:name="title"
             android:defaultValue="@null"
             app:argType="string"
             app:nullable="true" />
+
+        <argument
+            android:name="axis"
+            app:argType="integer" />
     </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package elmeniawy.eslam.materialtransitions
+package elmeniawy.eslam.materialtransitions.extensions
 
 import android.view.View
 import androidx.core.view.ViewCompat

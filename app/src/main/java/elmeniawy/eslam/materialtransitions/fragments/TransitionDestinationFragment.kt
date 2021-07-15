@@ -1,4 +1,4 @@
-package elmeniawy.eslam.materialtransitions
+package elmeniawy.eslam.materialtransitions.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,8 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.MaterialSharedAxis
 import elmeniawy.eslam.materialtransitions.databinding.FragmentTransitionDestinationBinding
+import elmeniawy.eslam.materialtransitions.enums.TransitionTypes
+import elmeniawy.eslam.materialtransitions.extensions.setInsetsPadding
 
 class TransitionDestinationFragment : Fragment() {
     private var _binding: FragmentTransitionDestinationBinding? = null
@@ -17,8 +19,26 @@ class TransitionDestinationFragment : Fragment() {
         super.onCreate(savedInstanceState)
 
         // Setup transition.
-        enterTransition = MaterialSharedAxis(_args.axis, true)
-        returnTransition = MaterialSharedAxis(_args.axis, false)
+        when (_args.transitionType) {
+            TransitionTypes.FADE_THROUGH -> {
+            }
+
+            TransitionTypes.FADE -> {
+            }
+
+            TransitionTypes.SHARED_AXIS -> {
+                if (_args.axis != -1) {
+                    enterTransition = MaterialSharedAxis(_args.axis, true)
+                    returnTransition = MaterialSharedAxis(_args.axis, false)
+                }
+            }
+
+            TransitionTypes.CONTAINER_TRANSFORMATION -> {
+            }
+
+            TransitionTypes.NO_TRANSITION -> {
+            }
+        }
     }
 
     override fun onCreateView(

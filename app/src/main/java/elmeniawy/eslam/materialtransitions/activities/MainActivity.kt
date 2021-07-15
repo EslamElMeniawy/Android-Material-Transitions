@@ -1,4 +1,4 @@
-package elmeniawy.eslam.materialtransitions
+package elmeniawy.eslam.materialtransitions.activities
 
 import android.graphics.Color
 import android.os.Build
