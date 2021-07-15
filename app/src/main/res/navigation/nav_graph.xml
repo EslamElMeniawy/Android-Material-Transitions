@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/axisFragment"
-        android:name="elmeniawy.eslam.sharedaxistransitions.AxisFragment"
+        android:name="elmeniawy.eslam.materialtransitions.AxisFragment"
         android:label="fragment_axis"
         tools:layout="@layout/fragment_axis">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/axisDestinationFragment"
-        android:name="elmeniawy.eslam.sharedaxistransitions.AxisDestinationFragment"
+        android:name="elmeniawy.eslam.materialtransitions.AxisDestinationFragment"
         android:label="fragment_axis_destination"
         tools:layout="@layout/fragment_axis_destination">
         <argument

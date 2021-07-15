@@ -1,4 +1,4 @@
-package elmeniawy.eslam.sharedaxistransitions
+package elmeniawy.eslam.materialtransitions
 
 import android.view.View
 import androidx.core.view.ViewCompat

@@ -1,4 +1,4 @@
-package elmeniawy.eslam.sharedaxistransitions
+package elmeniawy.eslam.materialtransitions
 
 import org.junit.Test
 

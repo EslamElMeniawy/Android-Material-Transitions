@@ -1,4 +1,4 @@
-package elmeniawy.eslam.sharedaxistransitions
+package elmeniawy.eslam.materialtransitions
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.transition.MaterialSharedAxis
-import elmeniawy.eslam.sharedaxistransitions.databinding.FragmentAxisDestinationBinding
+import elmeniawy.eslam.materialtransitions.databinding.FragmentAxisDestinationBinding
 
 class AxisDestinationFragment : Fragment() {
     private var _binding: FragmentAxisDestinationBinding? = null

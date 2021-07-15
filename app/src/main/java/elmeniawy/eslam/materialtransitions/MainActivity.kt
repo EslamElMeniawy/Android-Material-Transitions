@@ -1,11 +1,11 @@
-package elmeniawy.eslam.sharedaxistransitions
+package elmeniawy.eslam.materialtransitions
 
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import elmeniawy.eslam.sharedaxistransitions.databinding.ActivityMainBinding
+import elmeniawy.eslam.materialtransitions.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var _binding: ActivityMainBinding
